@@ -1,6 +1,6 @@
 .div{ border: solid;
   background: blueviolet;
-    width: 350px; 
+    width: 300px; 
     height: 230px;
     margin: 1%;
     border-radius: 15px;
@@ -8,6 +8,31 @@
 
 .div-contenedor{
   display: flex;
+}
+
+.navbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #38444d;
+}
+
+li {
+  float: center;
+}
+
+li a, .dropbtn {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(51, 12, 191);
 }
 
 .card-personaje{
