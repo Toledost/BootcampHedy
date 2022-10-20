@@ -22,6 +22,44 @@ li {
   float: center;
 }
 
+.fuente-24 {
+  font-size: 24px;
+}
+
+.fuente-48 {
+  font-size: 48px;
+}
+
+.fuente-100 {
+  font-size: 100px;
+}
+
+
+.titulo-center {
+  display: flex;
+  font-size: 24px;
+  color: #eb94d0;
+  
+}
+
+.titulo-left {
+  align-items: flex-end;
+  font-size: 50px;
+  color: #2079b0;
+  
+}
+
+.titulo-rigth {
+  margin: 200;
+  font-size: 60px;
+  color:brown
+}
+
+.parrafo-actualizado{
+  font-size: 20px;
+  color:rgb(1, 110, 19)
+}
+
 li a, .dropbtn {
   float: left;
   display: block;

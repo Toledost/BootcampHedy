@@ -17,6 +17,7 @@ import Saludo from './Components/Saludo';
 import Api from './Components/Api';
 import ComponenteDos from './Components/ComponenteDos';
 import Error from './Components/Error';
+import Eventos from './Components/Eventos';
 import { useEffect, useState } from 'react';
 import Home from './Components/Home';
 import MapeoUsuario from './Components/MapeoUsuario';
@@ -68,19 +69,18 @@ function App() {
       
       <Router>
         <ul className='navbar'>
-
-        <li>
-          <Link to={'./Home'}>Home</Link>
-        
-
-        <Link to={'./ComponenteDos'}>Componente dos</Link>
-        <Link to={'./Hola'}>Saludo</Link>
-        <Link to={'./MapeoUsuario'}>Tarjetas de usuarios</Link>
-        <Link to={'./Counter'}>Contador</Link>
-        <Link to={'./Mailbox'}>Casilla de mail</Link>
-        <Link to={'./Reloj'}>Reloj</Link>
-        <Link to={'./Api'}>Apitest</Link>
-        </li>
+          <li>
+            <Link to={'./Home'}>Home</Link>
+            <Link to={'./ComponenteDos'}>Componente dos</Link>
+            <Link to={'./Hola'}>Saludo</Link>
+            <Link to={'./MapeoUsuario'}>Tarjetas de usuarios</Link>
+            <Link to={'./Counter'}>Contador</Link>
+            <Link to={'./Mailbox'}>Casilla de mail</Link>
+            <Link to={'./Reloj'}>Reloj</Link>
+            <Link to={'./Api'}>Apitest</Link>
+            <Link to={'./Eventos'}>Eventos</Link>
+            <Link to={'./Error'}>Error</Link>
+          </li>
         </ul>
 
         <Routes>
@@ -92,41 +92,12 @@ function App() {
           <Route path='/Mailbox' element={<Mailbox></Mailbox>}></Route>
           <Route path='/Reloj' element={<Reloj></Reloj>}></Route>
           <Route path='/Api' element={<Api></Api>}></Route>
+          <Route path='/Eventos' element={<Eventos></Eventos>}></Route>
+          <Route path='/Error' element={<Error></Error>}></Route>
           <Route path='*' element={<Error></Error>}></Route>
 
-          
         </Routes>
       </Router>
-
-
-      
-       {/* <div className={'contenedor'}>
-          <h1 className='title'>
-            Bienvenidos nuevos usuarios
-           </h1>
-           <div className='div-contenedor'>
-           <Usuario nombre={usuarios[0].nombre} 
-                   nombreUsuario={usuarios[0].nombreUsuario}
-                   email={usuarios[0].email}
-                   id={usuarios[0].id}/>
-
-           <Usuario nombre={usuarios[1].nombre} 
-                   nombreUsuario={usuarios[1].nombreUsuario}
-                   email={usuarios[1].email}
-                   id={usuarios[1].id}/>
-
-           <Usuario nombre={usuarios[2].nombre} 
-                   nombreUsuario={usuarios[2].nombreUsuario}
-                   email={usuarios[2].email}
-                   id={usuarios[2].id}/>
-
-           </div>
-
-
-         <Counter></Counter>
-         <Reloj></Reloj>
-        
-       </div> */}
 
     </>
   );
