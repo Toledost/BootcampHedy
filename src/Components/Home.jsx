@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 
-{/* <Link to={'./ComponenteDos'}>Componente dos</Link> */}
-
 const Home = () => {
-    // const [active, setActive] = useState('home');
-    // const handleClick = (link) => {
-    //     setActive(link);
-    //   };
+
     return(
         <>
         <head>
@@ -20,7 +15,6 @@ const Home = () => {
                 <nav className='navbar'>
                     <h1 className='h1-cv'>CV</h1>
                     <ul>
-                        {/* <li className={active === 'perfil' ? 'active' : null} onClick={() => handleClick('perfil')}><a href="#">Perfil</a></li> */}
                         <li><a href="#perfil">Perfil</a></li>
                         <li><a href="#experiencia">Experiencia</a></li>
                         <li><a href="#educacion">Educación</a></li>

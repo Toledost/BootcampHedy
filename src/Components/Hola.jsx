@@ -6,11 +6,5 @@ const Hola = (props) => {
     )
 }
 
-// class Hola extends React.Component {
-//     render(){
-//         return <h2> Hola campers class</h2>
-//     }
-// }
 
-// exporta todo el archivo react 
 export default Hola;
