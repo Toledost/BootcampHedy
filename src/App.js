@@ -21,6 +21,7 @@ import Eventos from './Components/Eventos';
 import { useEffect, useState } from 'react';
 import Home from './Components/Home';
 import MapeoUsuario from './Components/MapeoUsuario';
+import Formularios from './Components/Formularios';
 
 
 function App() {
@@ -68,8 +69,12 @@ function App() {
       {/* <Api/> */}
       
       <Router>
-        <ul className='navbar'>
+        <ul className='navbar-principal'>
           <li>
+            
+
+
+
             <Link to={'./Home'}>Home</Link>
             <Link to={'./ComponenteDos'}>Componente dos</Link>
             <Link to={'./Hola'}>Saludo</Link>
@@ -79,6 +84,7 @@ function App() {
             <Link to={'./Reloj'}>Reloj</Link>
             <Link to={'./Api'}>Apitest</Link>
             <Link to={'./Eventos'}>Eventos</Link>
+            <Link to={'./Formularios'}>Formularios</Link>
             <Link to={'./Error'}>Error</Link>
           </li>
         </ul>
@@ -93,6 +99,7 @@ function App() {
           <Route path='/Reloj' element={<Reloj></Reloj>}></Route>
           <Route path='/Api' element={<Api></Api>}></Route>
           <Route path='/Eventos' element={<Eventos></Eventos>}></Route>
+          <Route path='/Formularios' element={<Formularios></Formularios>}></Route>
           <Route path='/Error' element={<Error></Error>}></Route>
           <Route path='*' element={<Error></Error>}></Route>
 
