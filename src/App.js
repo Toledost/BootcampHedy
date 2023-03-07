@@ -15,7 +15,7 @@ import PromisesHP from './Components/PromisesHP';
 import Mailbox from './Components/Mailbox';
 import Saludo from './Components/Saludo';
 import Api from './Components/Api';
-import ComponenteDos from './Components/ComponenteDos';
+import Crud from './Components/Crud';
 import Error from './Components/Error';
 import Eventos from './Components/Eventos';
 import { useEffect, useState } from 'react';
@@ -72,11 +72,8 @@ function App() {
         <ul className='navbar-principal'>
           <li>
             
-
-
-
             <Link to={'./Home'}>Home</Link>
-            <Link to={'./ComponenteDos'}>Componente dos</Link>
+            <Link to={'./Crud'}>CRUD</Link>
             <Link to={'./Hola'}>Saludo</Link>
             <Link to={'./MapeoUsuario'}>Tarjetas de usuarios</Link>
             <Link to={'./Counter'}>Contador</Link>
@@ -91,7 +88,7 @@ function App() {
 
         <Routes>
           <Route path='/Home' element={<Home></Home>}></Route>
-          <Route path='/ComponenteDos' element={<ComponenteDos></ComponenteDos>}></Route>
+          <Route path='/Crud' element={<Crud></Crud>}></Route>
           <Route path='/Hola' element={<Hola></Hola>}></Route>
           <Route path='/MapeoUsuario' element={<MapeoUsuario></MapeoUsuario>}></Route>
           <Route path='/Counter' element={<Counter></Counter>}></Route>
