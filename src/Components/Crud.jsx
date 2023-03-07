@@ -6,7 +6,9 @@ import axios from 'axios';
 const data = [
     {id: 1, marca: "Ford", color: "azul", kilometros: 52000},
     {id: 2, marca: "Fiat", color: "rojo", kilometros: 80000},
-    {id: 3, marca: "Renault", color: "gris", kilometros: 100000}
+    {id: 3, marca: "Renault", color: "gris", kilometros: 64000},
+    {id: 4, marca: "Logan", color: "blanco", kilometros: 100000},
+    {id: 5, marca: "Chevrolet", color: "bordo", kilometros: 115000}
   ]
 
 class Crud extends React.Component{
@@ -18,9 +20,11 @@ class Crud extends React.Component{
             color: "",
             kilometros: "",
         },
-        modalInsertar: false
+        modalInsertar: false,
+        modalEditar: false,
     };
 
+    // actualiza el estado del formulario con el valor ingresado por el usuario en cierto campo
     handleChange = e =>{
         this.setState({
             form:{
@@ -30,6 +34,7 @@ class Crud extends React.Component{
         });
     }
 
+    //Insertar
     mostrarModalInsertar = () =>{
         this.setState({modalInsertar:true});
     }
@@ -45,6 +50,47 @@ class Crud extends React.Component{
         lista.push(valorNuevo);
         this.setState({data: lista, modalInsertar: false})
     }
+
+    //Editar
+    mostrarModalEditar = (registro) =>{ //es el dato que se va a editar
+        this.setState({modalEditar:true, form: registro});
+    }
+
+    ocultarModalEditar = () =>{
+        this.setState({modalEditar:false})
+    }
+
+    editar = (dato) =>{
+        let contador = 0;
+        let lista = this.state.data;
+        lista.map((registro) => {
+            if(dato.id == registro.id){
+                lista[contador].marca = dato.marca;
+                lista[contador].color = dato.color;
+                lista[contador].kilometros = dato.kilometros;
+            }
+            contador++;
+        });
+        this.setState({data: lista, modalEditar: false})
+        
+    }
+
+    eliminar = (dato) => {
+        let opcion = window.confirm("Realmente desea eliminar el registro: " + dato.id);
+        if(opcion){
+            let contador = 0;
+            let lista = this.state.data;
+            lista.map((registro)=>{
+                if(registro.id == dato.id){
+                    lista.splice(contador, 1)
+                }
+                contador++
+            })
+            this.setState({data: lista})
+        }
+
+    }
+
 
     render(){
         return(
@@ -74,9 +120,9 @@ class Crud extends React.Component{
                                 <td>{elemento.color}</td>
                                 <td>{elemento.kilometros}</td> 
                                 <td>
-                                    <Button color='primary'>Editar</Button>
+                                    <Button color='primary' onClick={()=>this.mostrarModalEditar(elemento)}>Editar</Button>
                                     {"  "}
-                                    <Button color='danger'>Eliminar</Button>
+                                    <Button color='danger' onClick={()=>this.eliminar(elemento)}>Eliminar</Button>
                                 </td>                          
                             </tr>
                         ))}
@@ -117,6 +163,41 @@ class Crud extends React.Component{
                 <ModalFooter>
                     <Button color='primary' onClick={()=>this.insertar()}>Insertar</Button>
                     <Button color='danger' onClick={()=>this.ocultarModalInsertar()}>Cancelar</Button>
+                </ModalFooter>
+            </Modal>
+
+            <Modal isOpen={this.state.modalEditar}>
+                <ModalHeader>
+                    <div>
+                        <h3>Editar Registro</h3>
+                    </div>
+                </ModalHeader>
+
+                <ModalBody>
+                    <FormGroup>
+                        <Label htmlFor="">Id: </Label>
+                        <Input type="text" className='from-control' name='id' readOnly value={this.state.form.id} />
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Label for="exampleEmail">Marca</Label>
+                        <Input type="email" name="marca" onChange={this.handleChange} value={this.state.form.marca} />
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Label htmlFor="">Color:</Label>
+                        <Input type="text" className='from-control' name='color' onChange={this.handleChange} value={this.state.form.color} />
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Label htmlFor="">Kilometros:</Label>
+                        <Input type="number" className='from-control' name='kilometros' onChange={this.handleChange} value={this.state.form.kilometros} />
+                    </FormGroup>
+                </ModalBody>
+
+                <ModalFooter>
+                    <Button color='primary'onClick={()=>this.editar(this.state.form)} >Guardar</Button>
+                    <Button color='danger' onClick={()=>this.ocultarModalEditar()}>Cancelar</Button>
                 </ModalFooter>
             </Modal>
             </>
