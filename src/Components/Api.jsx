@@ -6,6 +6,8 @@ const Apitest = () => {
 
     //const url = 'https://633d5b14f2b0e623dc720bf9.mockapi.io/blogs/';
     const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=6&page=1&sparkline=false'
+    //const url = process.env.REACT_APP_API_URL;
+
 
     const [postId,setPostId] = useState(0);
     const [blogname,setBlogname] = useState('');
@@ -105,7 +107,7 @@ const Apitest = () => {
                     
                      - Moneda: {getBlog}
                      <ul>
-                        {!datos? 'cargando' : datos.map((item,index) => {
+                        {!datos? 'cargando...' : datos.map((item,index) => {
                             return(
                                 <li key={item.id}>
                                     {"id: " + item.id + " - symbol: " + item.symbol + " - name: " + item.name} 
