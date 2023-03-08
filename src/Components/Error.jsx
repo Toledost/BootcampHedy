@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Error = () => {
     return(
         <>
         <h1>
-            Error 404
+            La page que buscas no se encuentra, por favor dirigete a 
+            <Link to={'./Home'}>Home</Link>
         </h1>
         <p>Not Found</p>
         
