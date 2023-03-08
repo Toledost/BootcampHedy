@@ -4,7 +4,7 @@ const Error = () => {
     return(
         <>
         <h1>
-            Error 404 
+            Esto es un Error 404 para vos kali
         </h1>
         <p>Not Found</p>
         
