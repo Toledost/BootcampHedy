@@ -1,4 +1,3 @@
-//import logo from './giratorio.jpg';
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,52 +25,11 @@ import Formularios from './Components/Formularios';
 
 function App() {
 
-  // let auto = [
-  //   {marca: "Ford", color: "azul"},
-  //   {marca: "Fiat", color: "rojo"},
-  //   {marca: "Renault", color: "gris"}
-  // ]
-
-  // useEffect(() => {
-  //   console.log("soy usseEffect");
-  // }, [])
-
-  // function actualizarReloj(){
-  //   let momentoActual = new Date();
-  //   let hora = momentoActual.getHours();
-  //   let minuto = momentoActual.getMinutes();
-  //   let segundo = momentoActual.getSeconds();
-  //   let horaImprimible = hora + " : " + minuto + " : " + segundo
-  //   horaImprimible = hora + " : " + minuto + " : " + segundo
-
-  //   document.form_reloj.reloj.value = horaImprimible
-  //   setTimeout("mueveReloj()",1000)
-  // }
-  // const [show, setShow] = useState(true); 
-
   return (
     <>
-      {/* <div className={'contenedor'}>
-        <p>{`El auto es de marca ${auto[0].marca} y de color ${auto[0].color}. `}</p>
-        <p>{`El auto es de marca ${auto[1].marca} y de color ${auto[1].color}. `}</p>
-        <p>{`El auto es de marca ${auto[2].marca} y de color ${auto[2].color}. `}</p>
-      </div> */}
-      
-      {/* <Promises></Promises> */}
-      {/* <PromisesHP></PromisesHP> */}
-
-      {/* <button onClick={() => setShow(!show)}>
-        {show ? "mostrar mail" : "ocultar mail"}
-      </button> */}
-      {/* <Mailbox  meb = {1}></Mailbox> */}
-
-      
-      {/* <Api/> */}
-      
       <Router>
         <ul className='navbar-principal'>
           <li>
-            
             <Link to={'./Home'}>Home</Link>
             <Link to={'./Crud'}>CRUD</Link>
             <Link to={'./Hola'}>Saludo</Link>
