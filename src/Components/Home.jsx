@@ -11,7 +11,6 @@ const Home = () => {
         <body>
             <header>
                 <hr />
-                <Link to={'./Crud'}> Crud</Link>
                 <h1 className='title'>Toledo, Bruno Daniel</h1>
                 <nav className='navbar'>
                     <h1 className='h1-cv'>CV</h1>
